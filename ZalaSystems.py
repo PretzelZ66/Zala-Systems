@@ -1,4 +1,4 @@
-#0.0.0.1
+#0.0.0.2
 import time, random
 
 def pause(number):
@@ -13,6 +13,12 @@ def line(text):
 
 
 #System Block
-password = zalasystems2020
-print("Please enter a name.")
+password = "zalasystems2020"
+line("Please enter a name.")
 username = input(">>> ")
+line(f"So your name is {username}?")
+confirm = input("Y/N>>> ")
+while confirm.lower() == "n":
+    line("Please enter a name.")
+    username = input(">>> ")
+    line(f"So your name is {username}?")
