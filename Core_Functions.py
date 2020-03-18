@@ -1,4 +1,4 @@
-#0.0.0.1
+#0.0.0.2
 import time, random
 
 def pause(number):
@@ -16,3 +16,9 @@ def custom_line(text, number):
     """Prints a line of text, then pauses the program for a given number of time."""
     print(text)
     pause(number)
+
+
+def ask():
+    """Asks the user a question, then puts it into a variable."""
+    query = input(">>> ")
+    return  query
