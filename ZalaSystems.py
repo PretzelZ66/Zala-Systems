@@ -1,4 +1,4 @@
-#0.0.0.4
+#0.0.0.5
 import Core_Functions as cf
 
 
@@ -25,3 +25,6 @@ while access != password:
     cf.line(Error.one)
     cf.line("Please enter the current password")
     access = input(">>> ")
+cf.line(f"Welcome, {username}, to Zala Systems.")
+cf.custom_line("LOADING...", 0.25)
+cf.line("Loaded")
