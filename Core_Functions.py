@@ -1,4 +1,4 @@
-#0.0.0.2
+#0.0.0.3
 import time, random
 
 def pause(number):
@@ -22,3 +22,9 @@ def ask():
     """Asks the user a question, then puts it into a variable."""
     query = input(">>> ")
     return  query
+
+
+def yn_ask():
+    """Asks the user for a yes/no question, and puts the response into a variable"""
+    yn_query = input("Y/N>>> ")
+    return yn_query
