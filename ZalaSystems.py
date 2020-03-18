@@ -1,9 +1,11 @@
-#0.0.0.6
+#0.0.0.7
 import Core_Functions as cf
 
 
 class Error:
     one = "ERROR ONE: ACCESS DENIED"
+    two = "ERROR TWO: UNRECOGNISED COMMAND"
+    three = "ERROR THREE: PASSWORDS DO NOT MATCH"
 
 
 #System Block
@@ -30,5 +32,26 @@ cf.custom_line("LOADING...", 0.25)
 cf.line("Loaded")
 
 while True:
-    cf.line("Current menus: ")
+    cf.line("Current menus: System")
     cf.line("Which menu would you like to open?")
+    command = cf.ask()
+    if command.lower() == "system":
+        cf.line("Would you like to change the password?")
+        confirmation = cf.yn_ask()
+        if confirmation.lower() == "y":
+            cf.line("Please enter the current password")
+            access = cf.ask()
+            while access != password:
+                cf.line(Error.one)
+                cf.line("Please enter the current password")
+                access = cf.ask()
+            cf.line("Please enter the new password")
+            password = cf.ask()
+            cf.line("Please confirm the new password")
+            confirm_password = cf.ask()
+            while confirm_password != password:
+                cf.line(Error.three)
+                cf.line("Please confirm the new password")
+                confirm_password = cf.ask()
+            cf.line("Password Updated!")
+            cf.line(f"The new password is {password}!")
