@@ -1,4 +1,4 @@
-#0.0.0.10
+#0.0.0.11
 import Core_Functions as cf
 
 
@@ -34,17 +34,20 @@ cf.line(f"Welcome, {username}, to Zala Systems.")
 cf.custom_line("LOADING...", 0.25)
 cf.line("Loaded")
 
+#Main Loop
 while True:
     cf.line("Current menus: System")
     cf.line("Which menu would you like to open?")
     command = cf.ask()
 
+    #System Block
     if command.lower() == "system":
         cf.line("Current system options: Change password, Exit")
         cf.line("Which option would you like to access?")
         option = cf.ask()
 
-        if option.lower() == "system":
+        #Password Alterations
+        if option.lower() == "password":
             cf.line("Would you like to change the password?")
             confirmation = cf.yn_ask()
 
@@ -70,6 +73,7 @@ while True:
                 cf.line("Password Updated!")
                 cf.line(f"The new password is {password}!")
 
+        #Exit block
         elif option.lower() == "exit":
             cf.line("Are you sure?")
             confirm = cf.yn_ask()
