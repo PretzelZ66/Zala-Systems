@@ -1,4 +1,4 @@
-#0.0.0.8
+#0.0.0.9
 import Core_Functions as cf
 
 
@@ -36,24 +36,35 @@ while True:
     cf.line("Which menu would you like to open?")
     command = cf.ask()
     if command.lower() == "system":
-        cf.line("Would you like to change the password?")
-        confirmation = cf.yn_ask()
-        if confirmation.lower() == "y":
-            cf.line("Please enter the current password")
-            access = cf.ask()
-            while access != password:
-                cf.line(Error.one)
+        cf.line("Current system options: Change password, Exit")
+        cf.line("Which option would you like to access?")
+        option = cf.ask()
+        if option.lower() == "system":
+            cf.line("Would you like to change the password?")
+            confirmation = cf.yn_ask()
+            if confirmation.lower() == "y":
                 cf.line("Please enter the current password")
                 access = cf.ask()
-            cf.line("Please enter the new password")
-            password = cf.ask()
-            cf.line("Please confirm the new password")
-            confirm_password = cf.ask()
-            while confirm_password != password:
-                cf.line(Error.three)
+                while access != password:
+                    cf.line(Error.one)
+                    cf.line("Please enter the current password")
+                    access = cf.ask()
+                cf.line("Please enter the new password")
+                password = cf.ask()
                 cf.line("Please confirm the new password")
                 confirm_password = cf.ask()
-            cf.line("Password Updated!")
-            cf.line(f"The new password is {password}!")
+                while confirm_password != password:
+                    cf.line(Error.three)
+                    cf.line("Please confirm the new password")
+                    confirm_password = cf.ask()
+                cf.line("Password Updated!")
+                cf.line(f"The new password is {password}!")
+        elif option.lower() == "exit":
+            cf.line("Are you sure?")
+            confirm = cf.yn_ask()
+            if confirm.lower() == "y":
+                break
+        else:
+            cf.line(Error.two)
     else:
         cf.line(Error.two)
