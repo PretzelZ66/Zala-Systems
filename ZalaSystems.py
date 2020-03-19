@@ -1,4 +1,4 @@
-#0.0.0.11
+#0.0.0.12
 import Core_Functions as cf
 
 
@@ -47,7 +47,7 @@ while True:
         option = cf.ask()
 
         #Password Alterations
-        if option.lower() == "password":
+        if option.lower() == "change password":
             cf.line("Would you like to change the password?")
             confirmation = cf.yn_ask()
 
