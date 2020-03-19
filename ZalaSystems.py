@@ -1,4 +1,4 @@
-#0.0.0.7
+#0.0.0.8
 import Core_Functions as cf
 
 
@@ -55,3 +55,5 @@ while True:
                 confirm_password = cf.ask()
             cf.line("Password Updated!")
             cf.line(f"The new password is {password}!")
+    else:
+        cf.line(Error.two)
